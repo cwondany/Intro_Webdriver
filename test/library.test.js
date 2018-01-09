@@ -1,12 +1,8 @@
-var webdriver = require('selenium-webdriver'),
-    By = webdriver.By,
-    until = webdriver.until;
-
 var {describe, it, after, before} = require('selenium-webdriver/testing');
 var Page = require('../lib/home_page');
 var chai = require('chai');
 var chaiAsPromised = require(('chai-as-promised'));
-var should= chai.should();
+var should = chai.should();
 var page;
 chai.use(chaiAsPromised);
 
@@ -25,7 +21,7 @@ describe('library app scenarios', function () {
     });
 
     it('Typing valid email changes button opacity to 1', function () {
-        var btn=page.requestBtn();
+        var btn = page.requestBtn();
         btn.opacity.should.eventually.equal('1');
 
         /*        var submitBtn = page.driver.findElement(By.css('.btn-lg'));
@@ -39,7 +35,7 @@ describe('library app scenarios', function () {
     });
 
     it('Typing a valid email enables request button', function () {
-        var btn=page.requestBtn();
+        var btn = page.requestBtn();
         btn.state.should.eventually.be.true;
         /*       var submitBtn = page.driver.findElement(By.css('.btn-lg'));
                page.driver.findElement(By.css('input')).sendKeys('us@fakemail.com');
