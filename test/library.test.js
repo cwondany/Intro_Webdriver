@@ -36,7 +36,7 @@ var webdriver = require('selenium-webdriver'),
             });
         });
 
-        it('s hows nav bar:', function () {
+        it('shows nav bar:', function () {
             driver.findElement(By.css('nav')).getText().then(function (txt) {
                 console.log('write nav elements names: '+txt);
             })
