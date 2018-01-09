@@ -1,48 +1,50 @@
 var webdriver = require('selenium-webdriver'),
-    {describe, it, after, before} = require('selenium-webdriver/testing');
-By = webdriver.By,
-    assert = require('assert');
-until = webdriver.until;
+    By = webdriver.By,
+    until = webdriver.until;
 
-var driver;
-var find;
+var {describe, it, after, before} = require('selenium-webdriver/testing');
+var Page = require('../lib/home_page');
+var page;
 
 describe('library app scenarios', function () {
     //needed timeout coz it´s fast to execute
     this.timeout(50000);
+
     beforeEach(function () {
-        driver = new webdriver.Builder().forBrowser('chrome').build();
-        driver.get('https://library-app.firebaseapp.com/');
+        page = new Page();
+        page.visit('http:/library-app.firebaseapp.com');
+
     });
 
     afterEach(function () {
-        driver.quit();
+        page.quit();
     });
 
-    it('Changes Button opacity upon email being filled out', function () {
-        var submitBtn = driver.findElement(By.css('.btn-lg'));
-        driver.findElement(By.css('input')).sendKeys('us@fakemail.com');
+    it('Typing valid email changes button opacity to 1', function () {
 
-        return submitBtn.getCssValue('opacity').then(function (result) {
-            assert(result === '1');
-        });
+        page.requestBtn();
+
+        /*        var submitBtn = page.driver.findElement(By.css('.btn-lg'));
+                page.driver.findElement(By.css('input')).sendKeys('us@fakemail.com');
+                page.driver.wait(function () {
+                    return submitBtn.getCssValue('opacity').then(function(result) {
+                        return result === '1';
+                    });
+                }, 5000);*/
 
     });
 
-    it('wait for mailadress @-sign,click btn and get success test:', function () {
-        var submitBtn = driver.findElement(By.css('.btn-lg'));
-        driver.findElement(By.css('input')).sendKeys('us@fakemail.com');
-        submitBtn.click();
-        driver.wait(until.elementLocated(By.css('.alert-success')), 5000);
-        driver.findElements(By.css('.alert-success')).then(function(result) {
-            assert.equal(result.length, 1, "alert-success were found");
-        });
+    it('Typing a valid email enables request button', function () {
+        page.requestBtn();
+        /*       var submitBtn = page.driver.findElement(By.css('.btn-lg'));
+               page.driver.findElement(By.css('input')).sendKeys('us@fakemail.com');
+               submitBtn.click();
+               page.driver.wait(until.elementLocated(By.css('.alert-success')), 5000);*/
     });
 
-    it('shows nav bar:', function () {
-        driver.findElements(By.css('nav')).then(function (result) {
-            assert.equal(result.length, 1, "nav bars were found");
-        })
+    it('Clicking request invitation triggers a cofirmation alert', function () {
+        page.alertSuccess();
+        // page.driver.findElements(By.css('nav'));
     });
 
 })
