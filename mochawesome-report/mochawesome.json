@@ -2,24 +2,24 @@
   "stats": {
     "suites": 1,
     "tests": 3,
-    "passes": 2,
+    "passes": 3,
     "pending": 0,
-    "failures": 1,
-    "start": "2018-01-09T15:45:33.789Z",
-    "end": "2018-01-09T15:45:45.866Z",
-    "duration": 12077,
+    "failures": 0,
+    "start": "2018-01-09T15:54:35.141Z",
+    "end": "2018-01-09T15:54:52.575Z",
+    "duration": 17434,
     "testsRegistered": 3,
-    "passPercent": 66.7,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "passPercentClass": "warning",
+    "passPercentClass": "success",
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "d40d6a02-14e9-4f3b-be3a-53f1afb77aed",
+    "uuid": "5b525d0d-c714-405a-a173-d30edbe82cb6",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,7 +28,7 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "9557c564-dd23-4d68-a874-fce8bc1a241b",
+        "uuid": "5d412935-da64-49ef-a79f-73d43adbd627",
         "title": "library app scenarios",
         "fullFile": "C:\\Users\\cwondany\\Desktop\\Intro_Webdriver\\test\\library.test.js",
         "file": "\\test\\library.test.js",
@@ -37,14 +37,14 @@
             "title": "\"before each\" hook",
             "fullTitle": "library app scenarios \"before each\" hook",
             "timedOut": false,
-            "duration": 1,
+            "duration": 0,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "page = new Page();\npage.visit('http:/library-app.firebaseapp.com');",
             "err": {},
             "isRoot": false,
-            "uuid": "3d5a5cae-b002-4424-bed7-72438955197a",
+            "uuid": "f1780291-dcb3-4f53-a977-ed6677981845",
             "isHook": true,
             "skipped": false
           }
@@ -61,7 +61,7 @@
             "code": "page.quit();",
             "err": {},
             "isRoot": false,
-            "uuid": "5d4b6efb-353a-4c92-9cc5-ff19819571d4",
+            "uuid": "9cf23f44-cd04-47a5-be21-d73a95e60f3d",
             "isHook": true,
             "skipped": false
           }
@@ -71,7 +71,7 @@
             "title": "Typing valid email changes button opacity to 1",
             "fullTitle": "library app scenarios Typing valid email changes button opacity to 1",
             "timedOut": false,
-            "duration": 4195,
+            "duration": 9514,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -80,7 +80,7 @@
             "code": "var btn=page.requestBtn();\nbtn.opacity.should.eventually.equal('1');\n/*        var submitBtn = page.driver.findElement(By.css('.btn-lg'));\n        page.driver.findElement(By.css('input')).sendKeys('us@fakemail.com');\n        page.driver.wait(function () {\n            return submitBtn.getCssValue('opacity').then(function(result) {\n                return result === '1';\n            });\n        }, 5000);*/",
             "err": {},
             "isRoot": false,
-            "uuid": "bed62bdc-0269-4d12-9803-aa92ecfc6620",
+            "uuid": "6fa65d1c-55ca-47cc-ac12-79961290fab7",
             "isHook": false,
             "skipped": false
           },
@@ -88,19 +88,16 @@
             "title": "Typing a valid email enables request button",
             "fullTitle": "library app scenarios Typing a valid email enables request button",
             "timedOut": false,
-            "duration": 3365,
-            "state": "failed",
-            "pass": false,
-            "fail": true,
+            "duration": 3463,
+            "state": "passed",
+            "speed": "slow",
+            "pass": true,
+            "fail": false,
             "pending": false,
-            "code": "var btn=page.requestBtn();\nbtn.state.should.eventually.be.false;\n/*       var submitBtn = page.driver.findElement(By.css('.btn-lg'));\n       page.driver.findElement(By.css('input')).sendKeys('us@fakemail.com');\n       submitBtn.click();\n       page.driver.wait(until.elementLocated(By.css('.alert-success')), 5000);*/",
-            "err": {
-              "message": "AssertionError: expected true to be false",
-              "estack": "AssertionError: expected true to be false\nFrom: Task: library app scenarios Typing a valid email enables request button\n    at Context.ret (node_modules\\selenium-webdriver\\testing\\index.js:182:10)",
-              "diff": "- true\n+ false\n"
-            },
+            "code": "var btn=page.requestBtn();\nbtn.state.should.eventually.be.true;\n/*       var submitBtn = page.driver.findElement(By.css('.btn-lg'));\n       page.driver.findElement(By.css('input')).sendKeys('us@fakemail.com');\n       submitBtn.click();\n       page.driver.wait(until.elementLocated(By.css('.alert-success')), 5000);*/",
+            "err": {},
             "isRoot": false,
-            "uuid": "139ffe4b-6852-4aeb-b819-6443278e9f28",
+            "uuid": "1ec4b8e7-3ca7-4556-adab-740372dd4a1f",
             "isHook": false,
             "skipped": false
           },
@@ -108,7 +105,7 @@
             "title": "Clicking request invitation triggers a cofirmation alert",
             "fullTitle": "library app scenarios Clicking request invitation triggers a cofirmation alert",
             "timedOut": false,
-            "duration": 4485,
+            "duration": 4414,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -117,22 +114,21 @@
             "code": "var alert = page.alertSuccess();\nalert.should.eventually.contain('Thank you!');\n// page.driver.findElements(By.css('nav'));",
             "err": {},
             "isRoot": false,
-            "uuid": "bc6c1c2f-5bd9-4b30-925a-2da9ff6ba65b",
+            "uuid": "5828b7a4-33d0-4883-ad20-bb51fafa25b9",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "bed62bdc-0269-4d12-9803-aa92ecfc6620",
-          "bc6c1c2f-5bd9-4b30-925a-2da9ff6ba65b"
+          "6fa65d1c-55ca-47cc-ac12-79961290fab7",
+          "1ec4b8e7-3ca7-4556-adab-740372dd4a1f",
+          "5828b7a4-33d0-4883-ad20-bb51fafa25b9"
         ],
-        "failures": [
-          "139ffe4b-6852-4aeb-b819-6443278e9f28"
-        ],
+        "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 12045,
+        "duration": 17391,
         "root": false,
         "rootEmpty": false,
         "_timeout": 50000
