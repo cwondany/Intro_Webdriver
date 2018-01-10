@@ -6,7 +6,7 @@ var should = chai.should();
 var page;
 chai.use(chaiAsPromised);
 
-describe('library app scenarios', function () {
+describe('library app scenarios: Home Page', function () {
     //needed timeout coz it´s fast to execute
     this.timeout(50000);
 
@@ -31,7 +31,6 @@ describe('library app scenarios', function () {
                         return result === '1';
                     });
                 }, 5000);*/
-
     });
 
     it('Typing a valid email enables request button', function () {

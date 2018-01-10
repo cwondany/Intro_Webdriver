@@ -1,25 +1,25 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 3,
+    "suites": 2,
+    "tests": 5,
     "passes": 3,
     "pending": 0,
-    "failures": 0,
-    "start": "2018-01-09T15:54:35.141Z",
-    "end": "2018-01-09T15:54:52.575Z",
-    "duration": 17434,
-    "testsRegistered": 3,
-    "passPercent": 100,
+    "failures": 2,
+    "start": "2018-01-10T09:01:58.587Z",
+    "end": "2018-01-10T09:05:01.246Z",
+    "duration": 182659,
+    "testsRegistered": 5,
+    "passPercent": 60,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "passPercentClass": "success",
+    "passPercentClass": "warning",
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "5b525d0d-c714-405a-a173-d30edbe82cb6",
+    "uuid": "1ca9ed6b-8963-4fb5-9119-a953a8c9f02a",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,7 +28,7 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "5d412935-da64-49ef-a79f-73d43adbd627",
+        "uuid": "fbc9d5d5-b53a-4e17-a6cf-7fd11fd2c3ed",
         "title": "library app scenarios",
         "fullFile": "C:\\Users\\cwondany\\Desktop\\Intro_Webdriver\\test\\library.test.js",
         "file": "\\test\\library.test.js",
@@ -37,14 +37,14 @@
             "title": "\"before each\" hook",
             "fullTitle": "library app scenarios \"before each\" hook",
             "timedOut": false,
-            "duration": 0,
+            "duration": 1,
             "pass": false,
             "fail": false,
             "pending": false,
             "code": "page = new Page();\npage.visit('http:/library-app.firebaseapp.com');",
             "err": {},
             "isRoot": false,
-            "uuid": "f1780291-dcb3-4f53-a977-ed6677981845",
+            "uuid": "fe2c8474-d766-40eb-8862-54af4154bda5",
             "isHook": true,
             "skipped": false
           }
@@ -61,7 +61,7 @@
             "code": "page.quit();",
             "err": {},
             "isRoot": false,
-            "uuid": "9cf23f44-cd04-47a5-be21-d73a95e60f3d",
+            "uuid": "c6e7955f-c186-4b7d-8db2-60a870eacb8d",
             "isHook": true,
             "skipped": false
           }
@@ -71,16 +71,16 @@
             "title": "Typing valid email changes button opacity to 1",
             "fullTitle": "library app scenarios Typing valid email changes button opacity to 1",
             "timedOut": false,
-            "duration": 9514,
+            "duration": 25070,
             "state": "passed",
             "speed": "slow",
             "pass": true,
             "fail": false,
             "pending": false,
-            "code": "var btn=page.requestBtn();\nbtn.opacity.should.eventually.equal('1');\n/*        var submitBtn = page.driver.findElement(By.css('.btn-lg'));\n        page.driver.findElement(By.css('input')).sendKeys('us@fakemail.com');\n        page.driver.wait(function () {\n            return submitBtn.getCssValue('opacity').then(function(result) {\n                return result === '1';\n            });\n        }, 5000);*/",
+            "code": "var btn = page.requestBtn();\nbtn.opacity.should.eventually.equal('1');\n/*        var submitBtn = page.driver.findElement(By.css('.btn-lg'));\n        page.driver.findElement(By.css('input')).sendKeys('us@fakemail.com');\n        page.driver.wait(function () {\n            return submitBtn.getCssValue('opacity').then(function(result) {\n                return result === '1';\n            });\n        }, 5000);*/",
             "err": {},
             "isRoot": false,
-            "uuid": "6fa65d1c-55ca-47cc-ac12-79961290fab7",
+            "uuid": "8d70fc39-3ee7-400a-a075-9a39df028898",
             "isHook": false,
             "skipped": false
           },
@@ -88,16 +88,16 @@
             "title": "Typing a valid email enables request button",
             "fullTitle": "library app scenarios Typing a valid email enables request button",
             "timedOut": false,
-            "duration": 3463,
+            "duration": 44559,
             "state": "passed",
             "speed": "slow",
             "pass": true,
             "fail": false,
             "pending": false,
-            "code": "var btn=page.requestBtn();\nbtn.state.should.eventually.be.true;\n/*       var submitBtn = page.driver.findElement(By.css('.btn-lg'));\n       page.driver.findElement(By.css('input')).sendKeys('us@fakemail.com');\n       submitBtn.click();\n       page.driver.wait(until.elementLocated(By.css('.alert-success')), 5000);*/",
+            "code": "var btn = page.requestBtn();\nbtn.state.should.eventually.be.true;\n/*       var submitBtn = page.driver.findElement(By.css('.btn-lg'));\n       page.driver.findElement(By.css('input')).sendKeys('us@fakemail.com');\n       submitBtn.click();\n       page.driver.wait(until.elementLocated(By.css('.alert-success')), 5000);*/",
             "err": {},
             "isRoot": false,
-            "uuid": "1ec4b8e7-3ca7-4556-adab-740372dd4a1f",
+            "uuid": "f40c0ef8-7564-430a-8c0c-45dea0329fab",
             "isHook": false,
             "skipped": false
           },
@@ -105,7 +105,7 @@
             "title": "Clicking request invitation triggers a cofirmation alert",
             "fullTitle": "library app scenarios Clicking request invitation triggers a cofirmation alert",
             "timedOut": false,
-            "duration": 4414,
+            "duration": 35032,
             "state": "passed",
             "speed": "slow",
             "pass": true,
@@ -114,21 +114,113 @@
             "code": "var alert = page.alertSuccess();\nalert.should.eventually.contain('Thank you!');\n// page.driver.findElements(By.css('nav'));",
             "err": {},
             "isRoot": false,
-            "uuid": "5828b7a4-33d0-4883-ad20-bb51fafa25b9",
+            "uuid": "4f225185-c5fb-4ae0-8a87-ecaf85b56c6f",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "6fa65d1c-55ca-47cc-ac12-79961290fab7",
-          "1ec4b8e7-3ca7-4556-adab-740372dd4a1f",
-          "5828b7a4-33d0-4883-ad20-bb51fafa25b9"
+          "8d70fc39-3ee7-400a-a075-9a39df028898",
+          "f40c0ef8-7564-430a-8c0c-45dea0329fab",
+          "4f225185-c5fb-4ae0-8a87-ecaf85b56c6f"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 17391,
+        "duration": 104661,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 50000
+      },
+      {
+        "uuid": "0a1ae2b3-3e53-4b9b-aebc-8cea3da88154",
+        "title": "library app scenarios",
+        "fullFile": "C:\\Users\\cwondany\\Desktop\\Intro_Webdriver\\test\\libraryPage.test.js",
+        "file": "\\test\\libraryPage.test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before each\" hook",
+            "fullTitle": "library app scenarios \"before each\" hook",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "page = new Page();\npage.visit('http:/library-app.firebaseapp.com');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "dda874d5-6031-48a3-a7e4-0ad616930b7c",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [
+          {
+            "title": "\"after each\" hook",
+            "fullTitle": "library app scenarios \"after each\" hook",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "page.quit();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "6e659b3e-365e-4c6c-b640-b01c8222a40b",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "tests": [
+          {
+            "title": "Should list libraries",
+            "fullTitle": "library app scenarios Should list libraries",
+            "timedOut": false,
+            "duration": 42226,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "var libraries = page.listLibraries();\nlibraries.should.eventually.have.length().above(10);",
+            "err": {
+              "message": "TimeoutError: Waiting for element to be located By(css selector, .library-item)\nWait timed out after 15004ms",
+              "estack": "TimeoutError: Waiting for element to be located By(css selector, .library-item)\nWait timed out after 15004ms\n    at node_modules\\selenium-webdriver\\lib\\promise.js:2201:17\n    at ManagedPromise.invokeCallback_ (node_modules\\selenium-webdriver\\lib\\promise.js:1376:14)\n    at TaskQueue.execute_ (node_modules\\selenium-webdriver\\lib\\promise.js:3084:14)\n    at TaskQueue.executeNext_ (node_modules\\selenium-webdriver\\lib\\promise.js:3067:27)\n    at asyncRun (node_modules\\selenium-webdriver\\lib\\promise.js:2927:27)\n    at node_modules\\selenium-webdriver\\lib\\promise.js:668:7\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\nFrom: Task: Waiting for element to be located By(css selector, .library-item)\n    at scheduleWait (node_modules\\selenium-webdriver\\lib\\promise.js:2188:20)\n    at ControlFlow.wait (node_modules\\selenium-webdriver\\lib\\promise.js:2517:12)\n    at thenableWebDriverProxy.wait (node_modules\\selenium-webdriver\\lib\\webdriver.js:934:29)\n    at Page.findAll (lib\\base_page.js:36:16)\n    at Page.listLibraries (lib\\libraries_page.js:11:17)\n    at Context.<anonymous> (test\\libraryPage.test.js:24:30)\n    at runTest (node_modules\\selenium-webdriver\\testing\\index.js:163:22)\n    at node_modules\\selenium-webdriver\\testing\\index.js:184:16\n    at new ManagedPromise (node_modules\\selenium-webdriver\\lib\\promise.js:1077:7)\n    at controlFlowExecute (node_modules\\selenium-webdriver\\testing\\index.js:183:14)\n    at TaskQueue.execute_ (node_modules\\selenium-webdriver\\lib\\promise.js:3084:14)\n    at TaskQueue.executeNext_ (node_modules\\selenium-webdriver\\lib\\promise.js:3067:27)\n    at asyncRun (node_modules\\selenium-webdriver\\lib\\promise.js:2927:27)\n    at node_modules\\selenium-webdriver\\lib\\promise.js:668:7\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\nFrom: Task: library app scenarios Should list libraries\n    at Context.ret (node_modules\\selenium-webdriver\\testing\\index.js:182:10)"
+            },
+            "isRoot": false,
+            "uuid": "8ec5a9f9-da6a-4978-94d3-048b75bd8f5e",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "Should be able to add new library",
+            "fullTitle": "library app scenarios Should be able to add new library",
+            "timedOut": false,
+            "duration": 35721,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "page.addLibrary();",
+            "err": {
+              "message": "TimeoutError: Waiting for element to be located By(link text, Add new )\nWait timed out after 15002ms",
+              "estack": "TimeoutError: Waiting for element to be located By(link text, Add new )\nWait timed out after 15002ms\n    at node_modules\\selenium-webdriver\\lib\\promise.js:2201:17\n    at ManagedPromise.invokeCallback_ (node_modules\\selenium-webdriver\\lib\\promise.js:1376:14)\n    at TaskQueue.execute_ (node_modules\\selenium-webdriver\\lib\\promise.js:3084:14)\n    at TaskQueue.executeNext_ (node_modules\\selenium-webdriver\\lib\\promise.js:3067:27)\n    at asyncRun (node_modules\\selenium-webdriver\\lib\\promise.js:2927:27)\n    at node_modules\\selenium-webdriver\\lib\\promise.js:668:7\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\nFrom: Task: Waiting for element to be located By(link text, Add new )\n    at scheduleWait (node_modules\\selenium-webdriver\\lib\\promise.js:2188:20)\n    at ControlFlow.wait (node_modules\\selenium-webdriver\\lib\\promise.js:2517:12)\n    at thenableWebDriverProxy.wait (node_modules\\selenium-webdriver\\lib\\webdriver.js:934:29)\n    at Page.findLink (lib\\base_page.js:31:16)\n    at Page.addLibrary (lib\\libraries_page.js:18:10)\n    at Context.<anonymous> (test\\libraryPage.test.js:29:14)\n    at runTest (node_modules\\selenium-webdriver\\testing\\index.js:163:22)\n    at node_modules\\selenium-webdriver\\testing\\index.js:184:16\n    at new ManagedPromise (node_modules\\selenium-webdriver\\lib\\promise.js:1077:7)\n    at controlFlowExecute (node_modules\\selenium-webdriver\\testing\\index.js:183:14)\n    at TaskQueue.execute_ (node_modules\\selenium-webdriver\\lib\\promise.js:3084:14)\n    at TaskQueue.executeNext_ (node_modules\\selenium-webdriver\\lib\\promise.js:3067:27)\n    at asyncRun (node_modules\\selenium-webdriver\\lib\\promise.js:2927:27)\n    at node_modules\\selenium-webdriver\\lib\\promise.js:668:7\n    at <anonymous>\n    at process._tickCallback (internal/process/next_tick.js:188:7)\nFrom: Task: library app scenarios Should be able to add new library\n    at Context.ret (node_modules\\selenium-webdriver\\testing\\index.js:182:10)"
+            },
+            "isRoot": false,
+            "uuid": "b4835065-e1e3-48de-8a51-5388d5502266",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [],
+        "failures": [
+          "8ec5a9f9-da6a-4978-94d3-048b75bd8f5e",
+          "b4835065-e1e3-48de-8a51-5388d5502266"
+        ],
+        "pending": [],
+        "skipped": [],
+        "duration": 77947,
         "root": false,
         "rootEmpty": false,
         "_timeout": 50000
