@@ -1,12 +1,8 @@
 CMD: 
+>webdriver-manager start --standalone
 
-webdriver-manager start --standalone
-
-
-
-Hub start
-:
-java -jar selenium-server-standalone-3.8.1.jar -role hub
+Start e2e tests:
+> mocha test
 
 Mochawesome
-mocha test --reporter mochawesome --reporter-options autoOpen=true
+> mocha test --reporter mochawesome --reporter-options autoOpen=true
